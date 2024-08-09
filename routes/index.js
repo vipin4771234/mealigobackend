@@ -3,6 +3,7 @@ import path from "path";
 import csrf from "csurf";
 
 import userRoutes from "./userRoutes.js";
+import planRoutes from "./planRoutes.js"
 import packRoutes from "./packRoutes.js";
 import itemRoutes from "./itemRoutes.js";
 import tripRoutes from "./tripRoutes.js";
@@ -49,10 +50,12 @@ router.use("/password-reset", passwordResetRoutes);
 // router.use("/openai", openAiRoutes);
 router.use("/template", templateRoutes);
 router.use("/favorite", favoriteRouters);
+router.use("/plan", planRoutes);
 // router.use("/openai", openAiRoutes);
 
 // Also listen to /api for backwards compatibility
 router.use("/api/user", userRoutes);
+router.use("/api/plan", planRoutes);
 router.use("/api/pack", packRoutes);
 router.use("/api/item", itemRoutes);
 router.use("/api/trip", tripRoutes);
